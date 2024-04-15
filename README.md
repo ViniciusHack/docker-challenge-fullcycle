@@ -2,7 +2,7 @@
 
 ## Challenges:
 ### Custom Go Image
-- Upload a custom Golang docker image that shows "Full Cycle Rocks!!" in the terminal when using "docker run myuser/mygolangimage".
+- Upload a custom Golang docker image that shows "Full Cycle Rocks!!" in the terminal when using "docker run vinihack/go-fullcycle".
   - This image must be optimized to be **less than 2mb**
 
 ### Node with MySQL and Nginx:
