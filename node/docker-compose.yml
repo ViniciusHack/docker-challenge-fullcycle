@@ -7,6 +7,8 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
+    ports:
+      - 3000:3000
     volumes:
       - ./app:/home/app
     networks:
@@ -15,14 +17,17 @@ services:
       db:
         condition: service_healthy
   db:
+    build: 
+      context: ./mysql
+      dockerfile: Dockerfile
     platform: linux/x86_64
     container_name: mysql_db
-    image: mysql:5.7
+    image: app_my_sql
     tty: true
     restart: always
     command: --innodb-use-native-aio=0
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./mysql/backup:/var/lib/mysql
     networks:
       - app-network
     environment:
